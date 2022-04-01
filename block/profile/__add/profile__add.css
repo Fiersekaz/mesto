@@ -1,0 +1,17 @@
+.profile__add {
+    background-color: transparent;
+    height: 50px;
+    width: 150px;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    align-self: center;
+    background-image: url("../../../images/add.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .profile__add-btn:hover {
+    opacity: 60%;
+    transition: .3s;
+  }
