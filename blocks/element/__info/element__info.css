@@ -1,0 +1,9 @@
+.element__info {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 246px;
+    padding: 25px 15px 31px 21px;
+    min-height: 33px;
+}
