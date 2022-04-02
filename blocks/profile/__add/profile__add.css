@@ -1,22 +1,22 @@
 .profile__add {
-    height: 50px;
-    width: 150px;
-    border: 2px solid #fff;
-    border-radius: 2px;
-    background: center transparent url(../../../images/add.svg) no-repeat;
-    cursor: pointer;
-    align-self: center;
-    transition: .3s;
-  }
-  
-  .profile__add:hover {
-    opacity: .6;
-  }
+  height: 50px;
+  width: 150px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  background: center transparent url(../../../images/add.svg) no-repeat;
+  cursor: pointer;
+  align-self: center;
+  transition: .3s;
+}
 
-  @media screen and (max-width: 767px) {
-    .profile__add {
-      width: 100%;
-      margin-top: 34px;
-      background-size: 17px;
-    }
+.profile__add:hover {
+  opacity: .6;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__add {
+    width: 100%;
+    margin-top: 34px;
+    background-size: 17px;
   }
+}

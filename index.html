@@ -79,10 +79,16 @@
     <footer class="footer block">
       <p class="footer__author">&copy; 2022 С. Баландин</p>
     </footer>
-  </body>
-  <div class="popup">
-    <div class="popup__edit-form">
-
+    <div class="popup">
+      <div class="popup__edit-body">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__edit-form" name="popup__edit-form" action="#" method="post">
+          <input class="popup__input" type="text" name="yourname">
+          <input class="popup__input" type="text" name="aboutyou">
+          <button class="popup__save" type="submit">Сохранить</button>
+        </form>
+        <button class="popup__close" type="button"></button>
+      </div>
     </div>
-  </div>
+  </body>
 </html>
