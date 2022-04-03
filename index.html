@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pages/index.css">
-    <title></title>
+    <title>Проект 4-го спринта</title>
   </head>
 
   <body class="page">
@@ -17,10 +17,10 @@
 
       <section class="profile block">
         <div class="profile__info">
-          <img class="profile__avatar" src="./images/avatar.png" alt="аватарка">
+          <img class="profile__avatar" src="./images/уильям.png" alt="аватарка">
           <div class="profile__main">
             <div class="profile__row-block">
-              <h1 class="profile__name">С. Баландин</h1>
+              <h1 class="profile__name">С. Баландининздя</h1>
               <button class="profile__edit" type="button"></button>
             </div>
             <p class="profile__about">Тоже, своего рода, путешественник</p>
@@ -80,15 +80,16 @@
       <p class="footer__author">&copy; 2022 С. Баландин</p>
     </footer>
     <div class="popup">
-      <div class="popup__edit-body">
+      <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__edit-form" name="popup__edit-form" action="#" method="post">
-          <input class="popup__input" type="text" name="yourname">
-          <input class="popup__input" type="text" name="aboutyou">
+        <form class="popup__edit-form" name="popup__editform" action="#" method="post">
+          <input class="popup__input popup__input_name" type="text" name="yourname" id="nameprofile">
+          <input class="popup__input popup__input_about" type="text" name="abutyou" id="aboutprofile">
           <button class="popup__save" type="submit">Сохранить</button>
         </form>
         <button class="popup__close" type="button"></button>
       </div>
     </div>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
