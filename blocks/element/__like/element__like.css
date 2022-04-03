@@ -2,7 +2,6 @@
     min-width: 22px;
     height: 19px;
     border: hidden;
-    background: none;
     cursor: pointer;
     background: transparent url(../../../images/like.svg) no-repeat;
     transition: .2s;
