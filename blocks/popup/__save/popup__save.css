@@ -15,7 +15,7 @@
 
 .popup__save:hover {
   transition: .3s;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, .8);
 }
 
 @media screen and (max-width: 767px) {
