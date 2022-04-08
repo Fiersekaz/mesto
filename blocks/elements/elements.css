@@ -7,15 +7,8 @@
     row-gap: 20px;
 }
 
-@media screen and (max-width: 899px) {
-    .elements {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media screen and (max-width: 767px) {
     .elements {
-        grid-template-columns: 1fr;
         margin-top: 36px;
         margin-bottom: 48px;
     }
