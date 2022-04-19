@@ -31,8 +31,8 @@ let profileEdit = document.querySelector('.profile__edit');
 let popupProfileWindow = document.querySelector('.popup_value_edit-profile');
 let popupCloseProfile = document.querySelector('.popup__close_profile-window');
 let formElement = document.querySelector('.popup__edit-form');
-let nameInput = formElement.querySelector('.popup__input_value_name');
-let jobInput = formElement.querySelector('.popup__input_value_about');
+let nameInput = formElement.querySelector('.popup__input_value_profile-name');
+let jobInput = formElement.querySelector('.popup__input_value_profile-about');
 let profileInfo = document.querySelector('.profile__info');
 let profileName = profileInfo.querySelector('.profile__name');
 let profileAbout = profileInfo.querySelector('.profile__about');
@@ -46,8 +46,8 @@ let elementCard = templateCards.querySelector('.element');
 let cardAddButton = document.querySelector('.profile__add');
 let popupCardWindow = document.querySelector('.popup_value_add-place');
 let popupCloseCard = document.querySelector('.popup__close_card-window');
-let addCardName = popupCardWindow.querySelector('.popup__addform_name');
-let addCardLink = popupCardWindow.querySelector('.popup__addform_link');
+let addCardName = popupCardWindow.querySelector('.popup__value_place-name');
+let addCardLink = popupCardWindow.querySelector('.popup__value_place-link');
 let newCardForm = popupCardWindow.querySelector('.popup__add-form');
 
 // Открытие изображения
