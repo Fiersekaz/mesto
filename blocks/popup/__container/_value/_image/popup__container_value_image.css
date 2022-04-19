@@ -1,0 +1,22 @@
+.popup__container_value_image {
+  padding: 39px 0 37px 0;
+  max-width: max-content;
+  position: fixed;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 2;
+}
+
+.popup__container_value_image::before {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: -1;
+}
