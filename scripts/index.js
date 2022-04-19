@@ -46,8 +46,8 @@ let elementCard = templateCards.querySelector('.element');
 let cardAddButton = document.querySelector('.profile__add');
 let popupCardWindow = document.querySelector('.popup_value_add-place');
 let popupCloseCard = document.querySelector('.popup__close_card-window');
-let addCardName = popupCardWindow.querySelector('.popup__value_place-name');
-let addCardLink = popupCardWindow.querySelector('.popup__value_place-link');
+let addCardName = popupCardWindow.querySelector('.popup__place-name');
+let addCardLink = popupCardWindow.querySelector('.popup__place-link');
 let newCardForm = popupCardWindow.querySelector('.popup__add-form');
 
 // Открытие изображения
