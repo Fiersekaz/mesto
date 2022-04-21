@@ -56,7 +56,7 @@
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form popup__add-form" name="popup-add-form">
           <input class="popup__input popup__name" type="text" name="imagename" required placeholder="Название">
-          <input class="popup__input popup__link" type="text" name="imagelink" required placeholder="Ссылка на картинку">
+          <input class="popup__input popup__link" type="url" name="imagelink" required placeholder="Ссылка на картинку">
           <button class="popup__save popup__save_card" type="submit" aria-label="Создать">Создать</button>
         </form>
         <button class="popup__close popup__close_card-window" type="button" aria-label="Закрыть окно"></button>
@@ -78,12 +78,13 @@
         <img class="element__image" src="#" alt="#">
         <div class="element__info">
           <h2 class="element__name"></h2>
-          <button class="element__like" onclick="likeActive(this)" type="button" aria-label="мне нравится"></button>
+          <button class="element__like" type="button" aria-label="мне нравится"></button>
           <button class="element__delete" type="button" aria-label="удалить карточку"></button>
         </div>
       </div>
     </template>
-  
+
+    <script src="./scripts/cards.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
