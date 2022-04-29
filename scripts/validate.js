@@ -4,7 +4,7 @@ const formConstants = {
 	inputErrorClass: "field__input_type_error",
 	errorClass: "field__error_active",
 	submitButtonSelector: ".button",
-	inactiveButtonClass: "button__disabled",
+	inactiveButtonClass: "button_disabled",
 };
 
 const enableValidation = () => {
