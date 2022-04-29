@@ -3,8 +3,8 @@ const profileEdit = document.querySelector(".profile__edit");
 const popupProfileWindow = document.querySelector(".popup_value_edit-profile");
 const popupCloseProfile = document.querySelector(".popup__close_profile-window");
 const formElement = document.querySelector(".popup__edit-form");
-const nameInput = formElement.querySelector(".popup__input_value_profile-name");
-const jobInput = formElement.querySelector(".popup__input_value_profile-about");
+const nameInput = formElement.querySelector(".input_value_profile-name");
+const jobInput = formElement.querySelector(".input_value_profile-about");
 const profileInfo = document.querySelector(".profile__info");
 const profileName = profileInfo.querySelector(".profile__name");
 const profileAbout = profileInfo.querySelector(".profile__about");
@@ -22,6 +22,7 @@ const popupCloseCard = document.querySelector(".popup__close_card-window");
 // Открытие изображения
 const popupImage = document.querySelector(".popup_value_image");
 const popupCloseImage = document.querySelector(".popup__close_image-window");
+const imageOverlay = document.querySelector(".popup__container_value_image");
 
 // Лайк
 const likeButton = templateCards.querySelector(".element__like");
@@ -32,7 +33,6 @@ initialCards.forEach((element) => {
 	const card = createCard(element.name, element.link);
 	renderCard(card);
 });
-
 
 function createCard(name, link) {
 	const newElement = templateCards.cloneNode(true);
@@ -104,9 +104,19 @@ function likeCard(event) {
 
 function openImageInPopup(event) {
 	openPopupWindow(popupImage);
-	
+
 	popupImage.querySelector(".popup__image").src = event.target.getAttribute("src");
 	popupImage.querySelector(".popup__about").textContent = event.target.getAttribute("alt");
+}
+
+function isOverlay(event) {
+	return event.target.classList.contains("popup__container_value_image");
+}
+
+function closeOverlay(event) {
+	if (isOverlay(event)) {
+		closePopupImage();
+	}
 }
 
 function openPopupWindow(element) {
@@ -117,6 +127,13 @@ function closePopupWindow(element) {
 	element.classList.remove("popup_is-opened");
 }
 
+document.addEventListener("keydown", function (event) {
+	if (event.key === "Escape" || event.key === "Esc") {
+		const popup = document.querySelector(".popup_is-opened");
+		closePopupWindow(popup);
+	}
+});
+
 profileEdit.addEventListener("click", openPopupProfile);
 popupCloseProfile.addEventListener("click", closePopupProfile);
 formElement.addEventListener("submit", formSubmitHandler);
@@ -126,3 +143,4 @@ popupCloseImage.addEventListener("click", closePopupImage);
 cardAddButton.addEventListener("click", openPopupCard);
 popupCloseCard.addEventListener("click", closePopupCard);
 newCardForm.addEventListener("submit", cardSubmitHandler);
+imageOverlay.addEventListener("click", closeOverlay);
