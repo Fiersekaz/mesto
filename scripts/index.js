@@ -64,12 +64,10 @@ function openPopupProfile() {
 	profileNameInput.value = profileName.textContent;
 	profileAboutInput.value = profileAbout.textContent;
 	openPopupWindow(popupProfileWindow);
-	document.addEventListener('keydown', closeByEscape);
 }
 
 function closePopupProfile() {
 	closePopupWindow(popupProfileWindow);
-	document.removeEventListener('keydown', closeByEscape);
 }
 
 function handleProfileFormSubmit(event) {
@@ -81,17 +79,14 @@ function handleProfileFormSubmit(event) {
 
 function closePopupImage() {
 	closePopupWindow(popupImageContainer);
-	document.removeEventListener('keydown', closeByEscape);
 }
 
 function openPopupCard() {
 	openPopupWindow(popupCardWindow);
-	document.addEventListener('keydown', closeByEscape);
 }
 
 function closePopupCard() {
 	closePopupWindow(popupCardWindow);
-	document.removeEventListener('keydown', closeByEscape);
 }
 
 function handleCardSubmit(event) {
@@ -118,7 +113,6 @@ function openImageInPopup(event) {
 	popupImage.src = event.target.getAttribute("src");
 	popupImageAbout.textContent = event.target.getAttribute("alt");
 	popupImage.alt = event.target.getAttribute("alt");
-	document.addEventListener('keydown', closeByEscape);
 }
 
 function isOverlay(event) {
@@ -149,6 +143,7 @@ function openPopupWindow(element) {
 
 function closePopupWindow(element) {
 	element.classList.remove("popup_is-opened");
+	document.removeEventListener('keydown', closeByEscape);
 }
 
 // document.addEventListener("keydown", function (event) {
