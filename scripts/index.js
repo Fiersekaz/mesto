@@ -131,10 +131,6 @@ function closeOtherOverlay(event) {
 	}
 }
 
-// function isOtherOverlay(event) {
-// 	return event.target.classList.contains("popup_is-opened");
-// }
-
 
 function openPopupWindow(element) {
 	element.classList.add("popup_is-opened");
@@ -146,12 +142,6 @@ function closePopupWindow(element) {
 	document.removeEventListener('keydown', closeByEscape);
 }
 
-// document.addEventListener("keydown", function (event) {
-// 	if (event.key === "Escape" || event.key === "Esc") {
-// 		const popup = document.querySelector(".popup_is-opened");
-// 		closePopupWindow(popup);
-// 	}
-// });
 
 function closeByEscape(event) {
 	if (event.key === 'Escape') {
