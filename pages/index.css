@@ -36,6 +36,7 @@
 @import url(../blocks/button/_disabled/button_disabled.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/_is-opened/popup_is-opened.css);
+@import url(../blocks/popup/_type/_dark/popup_type_dark.css);
 
 @import url(../blocks/field/field.css);
 @import url(../blocks/field/__input/field__input.css);
