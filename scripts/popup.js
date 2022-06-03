@@ -4,47 +4,24 @@ import {
 	profileNameInput,
 	profileAboutInput,
 	profileName,
-	popupCardWindow,
-	popupImageWindow,
 } from "./constans.js";
+
 export function openPopupProfile() {
 	profileNameInput.value = profileName.textContent;
 	profileAboutInput.value = profileAbout.textContent;
 	openPopupWindow(popupProfileWindow);
 }
 
-export function closePopupProfile() {
-	closePopupWindow(popupProfileWindow);
-}
 
-export function closePopupImage() {
-	closePopupWindow(popupImageWindow);
-}
-
-export function openPopupCard() {
-	openPopupWindow(popupCardWindow);
-}
-
-export function closePopupCard() {
-	closePopupWindow(popupCardWindow);
-}
 
 export function isOverlay(event) {
 	return (
-		// event.target.classList.contains("popup__container_value_image") ||
 		event.target.classList.contains("popup")
 	);
 }
 
-export function closeImageOverlay(event) {
-    console.log(event);
-	if (isOverlay(event)) {
-		closePopupImage();
-	}
-}
 
 export function closeOverlay(event) {
-    console.log(event);
 	if (isOverlay(event)) {
 		closePopupWindow(event.target);
 	}

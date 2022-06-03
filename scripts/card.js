@@ -18,12 +18,13 @@ export class Card {
 		return cardElement;
 	}
 
-	_delete(event) {
-		event.target.closest(".element").remove();
+	_delete() {
+		this._element.remove();
+		console.log(this._element);
 	}
 
-	_like(event) {
-		event.target.classList.toggle("element__like_active");
+	_like() {
+		this._elementLike.classList.toggle("element__like_active");
 	}
 
 	_openImageInPopup(event) {
@@ -35,21 +36,35 @@ export class Card {
 	}
 
 	generate() {
-		const element = this._getTemplate();
+		this._element = this._getTemplate();
 
-		const elementImage = element.querySelector(".element__image");
-		const elementName = element.querySelector(".element__name");
-		const elementDelete = element.querySelector(".element__delete");
-		const elementLike = element.querySelector(".element__like");
+
+
+		const elementImage = this._element.querySelector(".element__image");
+		const elementName = this._element.querySelector(".element__name");
 
 		elementName.textContent = this._name;
 		elementImage.src = this._link;
 		elementImage.alt = this._name;
 
-		elementDelete.addEventListener("click", this._delete);
-		elementLike.addEventListener("click", this._like);
 		elementImage.addEventListener("click", this._openImageInPopup);
-
-		return element;
+		this._setEventlistener()
+		return this._element;
 	}
+
+	_setEventlistener() {
+		this._elementLike = this._element.querySelector(".element__like");
+		this._element
+		  .querySelector(".element__like")
+		  .addEventListener("click", () => this._like());
+		this._element
+		  .querySelector(".element__delete")
+		  .addEventListener("click", () => this._delete());
+	// 	this._element
+	// 	  .querySelector(".element__image")
+	// 	  .addEventListener("click", () => {
+	// 		this._openPopupImage();
+	// 	  });
+	//   }
+}
 }
