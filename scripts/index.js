@@ -16,6 +16,7 @@ import {
 	popupCloseCard,
 	popupImageClose,
 	popupImageWindow,
+	templateCard
 } from "./constans.js";
 
 import { initialCards } from "./initialCards.js";
@@ -36,12 +37,14 @@ const formSettings = {
 	inactiveButtonClass: "button_disabled",
 };
 
+initialCards.forEach((element) => {
+	const card = createCard(element);
+	renderCard(card);
+});
 
-function createCard () {
-	initialCards.forEach((element) => {
-	const card = new Card(element.name, element.link, ".template-card");
-	renderCard(card.generate());
-})
+function createCard(element) {
+	const card = new Card(element.name, element.link, templateCard);
+	return card.generate();
 }
 
 const formProfile = document.querySelector(".popup__edit-form");
@@ -65,7 +68,7 @@ function handleProfileFormSubmit(event) {
 
 function handleCardSubmit(event) {
 	event.preventDefault();
-	const card = new Card(event.target.elements.imagename.value, event.target.elements.imagelink.value, ".template-card");
+	const card = new Card(event.target.elements.imagename.value, event.target.elements.imagelink.value, templateCard);
 	renderCard(card.generate());
 	closePopupWindow(popupCardWindow);
 	event.target.reset();
@@ -85,4 +88,3 @@ newCardForm.addEventListener("submit", handleCardSubmit);
 popupImageWindow.addEventListener("click", closeOverlay);
 popupCardWindow.addEventListener("click", closeOverlay);
 popupProfileWindow.addEventListener("click", closeOverlay);
-createCard();

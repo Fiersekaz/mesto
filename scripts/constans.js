@@ -11,7 +11,7 @@ export const profileAbout = profileInfo.querySelector(".profile__about");
 
 // Рендеринг карточек
 export const elements = document.querySelector(".elements");
-// const templateCard = document.querySelector(".template-card").content;
+export const templateCard = ".template-card";
 
 // Попап добавление карточки
 export const cardAddButton = document.querySelector(".profile__add");
