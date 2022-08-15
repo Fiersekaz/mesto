@@ -1,0 +1,14 @@
+.profile__row-block {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .profile__row-block {
+        margin-top: 22.5px;
+        margin-bottom: 14px;
+        justify-content: center;
+    }
+}

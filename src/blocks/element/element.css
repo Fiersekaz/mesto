@@ -1,0 +1,8 @@
+.element {
+  min-width: 282px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+  align-items: flex-end;
+}
