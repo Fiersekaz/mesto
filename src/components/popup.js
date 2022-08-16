@@ -10,16 +10,17 @@ class Popup {
 	constructor(selector) {
 		this._selector = selector;
 		this._closeButton = this._selector.querySelector(".popup__close");
+		this._handleEscClose = this._handleEscClose.bind(this);
 	}
 
 	open() {
 		this._selector.classList.add("popup_is-opened");
-		document.addEventListener("keydown", (event) => this._handleEscClose(event));
+		document.addEventListener("keydown", this._handleEscClose);
 	}
 
 	close() {
 		this._selector.classList.remove("popup_is-opened");
-		document.removeEventListener("keydown", (event) => this._handleEscClose(event));
+		document.removeEventListener("keydown",this._handleEscClose);
 	}
 
 	_handleEscClose(event) {

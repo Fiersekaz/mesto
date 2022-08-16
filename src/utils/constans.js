@@ -53,3 +53,12 @@ export const initialCards = [
 		link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
 	},
 ];
+
+export const formSettings = {
+	formSelector: ".popup__form",
+	inputSelector: ".field__input",
+	inputErrorClass: "field__input_type_error",
+	errorClass: "field__error_active",
+	submitButtonSelector: ".button",
+	inactiveButtonClass: "button_disabled",
+};

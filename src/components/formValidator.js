@@ -7,10 +7,10 @@ export class FormValidator {
 	}
 
 	enableValidation = () => {
-			this._formElement.addEventListener("submit", (event) => {
-				event.preventDefault();
-			});
-			this._setEventListeners();
+		this._formElement.addEventListener("submit", (event) => {
+			event.preventDefault();
+		});
+		this._setEventListeners();
 	};
 
 	_setEventListeners = () => {
@@ -64,4 +64,11 @@ export class FormValidator {
 			this._buttonElement.setAttribute("disabled", "disabled");
 		}
 	};
+
+	resetValidation() {
+		this._toggleButtonState();
+		this._inputList.forEach((inputElement) => {
+			this._hideInputError(inputElement);
+		});
+	}
 }
