@@ -41,7 +41,7 @@ function renderCard(element) {
 
 function handleCardSubmit(formValues) {
 	const card = createCard(formValues.imagename, formValues.imagelink);
-	cardList.addItem(card);
+	renderCard(card);
 }
 
 const cardList = new Section(
@@ -49,7 +49,7 @@ const cardList = new Section(
 		items: initialCards,
 		renderer: (element) => {
 			const card = createCard(element.name, element.link);
-			renderCard(card);
+			cardList.addItem(card);
 		},
 	},
 	elements
@@ -73,7 +73,6 @@ popupEditProfile.setEventListeners();
 
 function handleCardClick(event) {
 	popupImageValue.open(event.target.src, event.target.alt);
-	popupImageValue.resetValidation();
 }
 
 profileEdit.addEventListener("click", () => {

@@ -1,6 +1,3 @@
-// import { openPopupWindow } from "./popup.js";
-// import { popupImageWindow, popupImage, popupImageAbout } from "./constans.js";
-
 export class Card {
 	constructor(name, link, cardSelector, handleCardClick) {
 		this._name = name;
@@ -23,14 +20,6 @@ export class Card {
 		this._elementLike.classList.toggle("element__like_active");
 	}
 
-	// _openImageInPopup(event) {
-	// 	openPopupWindow(popupImageWindow);
-
-	// 	popupImage.src = event.target.getAttribute("src");
-	// 	popupImageAbout.textContent = event.target.getAttribute("alt");
-	// 	popupImage.alt = event.target.getAttribute("alt");
-	// }
-
 	generate() {
 		this._element = this._getTemplate();
 
@@ -41,7 +30,6 @@ export class Card {
 		elementImage.src = this._link;
 		elementImage.alt = this._name;
 
-		// elementImage.addEventListener("click", this._handleCardClick);
 		this._setEventlistener();
 		return this._element;
 	}
@@ -51,11 +39,5 @@ export class Card {
 		this._element.querySelector(".element__like").addEventListener("click", () => this._like());
 		this._element.querySelector(".element__delete").addEventListener("click", () => this._delete());
 		this._element.querySelector(".element__image").addEventListener("click", this._handleCardClick);
-		// 	this._element
-		// 	  .querySelector(".element__image")
-		// 	  .addEventListener("click", () => {
-		// 		this._openPopupImage();
-		// 	  });
-		//   }
 	}
 }

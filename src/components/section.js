@@ -1,19 +1,19 @@
 class Section {
-	constructor({ items, renderer }, selector) {
+	constructor({ items, renderer }, container) {
 		this._items = items;
 		this._renderer = renderer;
-		this._selector = selector;
+		this._container = container;
 	}
 
 	render() {
 		this._items.forEach((element) => {
 			const item = this._renderer(element);
-			this._selector.append(item);
+			this._container.append(item);
 		});
 	}
 
 	addItem(element) {
-		this._selector.prepend(element);
+		this._container.prepend(element);
 	}
 }
 

@@ -1,10 +1,10 @@
 import Popup from "./popup.js";
 class PopupWithForm extends Popup {
-	constructor(selector, callback) {
-		super(selector);
+	constructor(container, callback) {
+		super(container);
 		this._callback = callback;
-        this._inputsList = selector.querySelectorAll(".field__input");
-		this._form = selector.querySelector("form");
+        this._inputsList = container.querySelectorAll(".field__input");
+		this._form = container.querySelector("form");
 		this._buttonElement = this._form.querySelector(".button");
 	}
 
