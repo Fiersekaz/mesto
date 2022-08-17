@@ -35,14 +35,14 @@ function createCard(name, link) {
 	return card.generate();
 }
 
-function renderCard(element) {
-	elements.prepend(element);
-}
+// function renderCard(element) {
+// 	elements.prepend(element);
+// }
 
-function handleCardSubmit(formValues) {
-	const card = createCard(formValues.imagename, formValues.imagelink);
-	renderCard(card);
-}
+// function handleCardSubmit(formValues) {
+// 	const card = createCard(formValues.imagename, formValues.imagelink);
+// 	renderCard(card);
+// }
 
 const cardList = new Section(
 	{
@@ -59,13 +59,14 @@ cardList.render();
 const popupImageValue = new PopupWithImage(popupImageWindow);
 popupImageValue.setEventListeners();
 
-const popupAddCard = new PopupWithForm(popupCardWindow, handleCardSubmit);
+const popupAddCard = new PopupWithForm(popupCardWindow, (formValues) => {
+	cardList.addItem(createCard(formValues.imagename, formValues.imagelink))
+});
 popupAddCard.setEventListeners();
 
 const infoProfile = new UserInfo({ name: profileName, about: profileAbout });
 
 const popupEditProfile = new PopupWithForm(popupProfileWindow, (data) => {
-	console.log(data);
 	infoProfile.setUserInfo(data);
 });
 
