@@ -27,6 +27,10 @@ export const popupImageAbout = popupImageWindow.querySelector(".popup__about");
 // export const popupImageClose = document.querySelector(".popup__close_image-window");
 export const popupImageOverlay = document.querySelector(".popup__container_value_image");
 
+export const popupEditAvatar = document.querySelector(".popup_value_avatar");
+export const popupFormAvatar = popupEditAvatar.querySelector(".popup__form_avatar");
+
+
 export const initialCards = [
 	{
 		name: "Архыз",

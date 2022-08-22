@@ -17,7 +17,10 @@
 
       <section class="profile block">
         <div class="profile__info">
-          <img class="profile__avatar" src="<%=require('./images/уильям.png')%>" alt="аватарка">
+					<button class="profile__avatar-edit" name="edit-avatar" id="edit-avatar" type="button"
+        aria-label="Редактировать аватар">
+          	<img class="profile__avatar" src="<%=require('./images/уильям.png')%>" alt="аватарка">
+					</button>
           <div class="profile__main">
             <div class="profile__row-block">
               <h1 class="profile__name">С. Баландининздя</h1>
@@ -74,6 +77,24 @@
         <button class="popup__close popup__close_card-window" type="button" aria-label="Закрыть окно"></button>
       </div>
     </div>
+
+		<div class="popup popup_value_avatar">
+			<div class="popup__container">
+				<h2 class="popup__title">Обновить аватар</h2>
+				<form class="popup__form popup__form_avatar" name="avatarForm" novalidate>
+					<label class="field">
+						<input class="field__input avatar-link" type="url" id="avatar-link" name="avatarlink"  placeholder="Ссылка"
+							required />
+						<span class="field__error" id="avatar-link-error">
+						</span>
+					</label>
+					<button type="submit" class="button button_avatar">
+						Сохранить
+					</button>
+				</form>
+				<button type="button" class="popup__close popup__close-avatar" aria-label="Закрыть"></button>
+			</div>
+		</div>
 
     <div class="popup popup_value_image popup_type_dark">
       <div class="popup__container popup__container_value_image">

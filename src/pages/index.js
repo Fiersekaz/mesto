@@ -15,6 +15,8 @@ import {
 	profileForm,
 	newCardForm,
 	formSettings,
+	popupEditAvatar,
+	popupFormAvatar
 } from "../utils/constans.js";
 
 import { initialCards } from "../utils/constans.js";
@@ -23,6 +25,8 @@ import Section from "../components/section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/userinfo.js";
+
+
 
 const profileValidator = new FormValidator(formSettings, profileForm);
 profileValidator.enableValidation();
@@ -69,6 +73,8 @@ const infoProfile = new UserInfo({ name: profileName, about: profileAbout });
 const popupEditProfile = new PopupWithForm(popupProfileWindow, (data) => {
 	infoProfile.setUserInfo(data);
 });
+
+// const profileEditAvatar = new PopupWithForm(popupEditAvatar)
 
 popupEditProfile.setEventListeners();
 
