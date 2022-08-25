@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="pages/index.css"> -->
     <title>Проект 5-го спринта</title>
   </head>
 
@@ -19,14 +18,14 @@
         <div class="profile__info">
 					<button class="profile__avatar-edit" name="edit-avatar" id="edit-avatar" type="button"
         aria-label="Редактировать аватар">
-          	<img class="profile__avatar" src="<%=require('./images/уильям.png')%>" alt="аватарка">
+          	<img class="profile__avatar" src="<%=require('./images/default-user-profile.png')%>" alt="аватарка">
 					</button>
           <div class="profile__main">
             <div class="profile__row-block">
-              <h1 class="profile__name">С. Баландининздя</h1>
+              <h1 class="profile__name"></h1>
               <button class="profile__edit" type="button" aria-label="изменить профиль"></button>
             </div>
-            <p class="profile__about">Тоже, своего рода, путешественник</p>
+            <p class="profile__about"></p>
           </div>
         </div>
         <button class="profile__add" type="button" aria-label="добавить место"></button>
@@ -81,20 +80,30 @@
 		<div class="popup popup_value_avatar">
 			<div class="popup__container">
 				<h2 class="popup__title">Обновить аватар</h2>
-				<form class="popup__form popup__form_avatar" name="avatarForm" novalidate>
+				<form class="popup__form popup__form_avatar" name="avatar-form" novalidate>
 					<label class="field">
-						<input class="field__input avatar-link" type="url" id="avatar-link" name="avatarlink"  placeholder="Ссылка"
+						<input class="field__input avatar__link" type="url" id="avatar-link" name="avatar"  placeholder="Ссылка"
 							required />
-						<span class="field__error" id="avatar-link-error">
+						<span class="field__error avatar-link-error">
 						</span>
 					</label>
-					<button type="submit" class="button button_avatar">
+					<button type="submit" class="button button_avatar button_disabled" disabled>
 						Сохранить
 					</button>
 				</form>
-				<button type="button" class="popup__close popup__close-avatar" aria-label="Закрыть"></button>
+				<button class="popup__close popup__close-avatar"  type="button" aria-label="Закрыть"></button>
 			</div>
 		</div>
+
+    <div class="popup popup_value_delete">
+      <div class="popup__container">
+        <h2 class="popup__title">Вы уверены?</h2>
+        <form class="popup__form popup__form_delete" name="card-delete" novalidate>
+          <button class="button button_delete-agree" type="submit">Да</button>
+        </form>
+        <button type="button" class="popup__close popup__close-delete" aria-label="Закрыть"></button>
+      </div>
+    </div>
 
     <div class="popup popup_value_image popup_type_dark">
       <div class="popup__container popup__container_value_image">
@@ -106,12 +115,17 @@
       </div>
     </div>
 
+
+
     <template class="template-card">
       <div class="element">
         <img class="element__image" src="#" alt="#">
         <div class="element__info">
           <h2 class="element__name"></h2>
-          <button class="element__like" type="button" aria-label="мне нравится"></button>
+          <div class="element__like_container">
+            <button class="element__like" type="button" aria-label="мне нравится"></button>
+            <p class="element__like_counter"></p>
+          </div>
           <button class="element__delete" type="button" aria-label="удалить карточку"></button>
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 class Popup {
 	constructor(container) {
 		this._container = container;
@@ -13,7 +12,7 @@ class Popup {
 
 	close() {
 		this._container.classList.remove("popup_is-opened");
-		document.removeEventListener("keydown",this._handleEscClose);
+		document.removeEventListener("keydown", this._handleEscClose);
 	}
 
 	_handleEscClose(event) {
@@ -23,9 +22,7 @@ class Popup {
 	}
 
 	_isOverlay(event) {
-		return (
-			event.target.classList.contains("popup")
-		);
+		return event.target.classList.contains("popup");
 	}
 
 	_closeOverlay(event) {
