@@ -61,7 +61,7 @@ const cardList = new Section(
 	{
 		renderer: (element) => {
 			const card = createCard(element._id, element.name, element.link, element.likes, element.owner._id);
-			cardList.addItem(card);
+			cardList.insertItem(card);
 		},
 	},
 	elements
