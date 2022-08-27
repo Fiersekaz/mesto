@@ -1,6 +1,5 @@
 class Section {
-	constructor({ items, renderer }, container) {
-		this._items = items;
+	constructor({ renderer }, container) {
 		this._renderer = renderer;
 		this._container = container;
 	}
@@ -8,7 +7,7 @@ class Section {
 	renderItems(data) {
 		data.forEach((element) => {
 			const item = this._renderer(element);
-			this._container.prepend(item);
+			// this._container.append(item);
 		});
 	}
 

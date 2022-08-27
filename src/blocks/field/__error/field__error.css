@@ -1,7 +1,8 @@
 .field__error {
-    display: none;
+    display: block;
     margin-top: 5px;
     padding: 0;
+    height: 15px;
     font-size: 12px;
     line-height: 14.52px;
     color: red;

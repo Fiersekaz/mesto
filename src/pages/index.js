@@ -59,7 +59,6 @@ const avatarValidation = new FormValidator(formSettings, popupFormAvatar);
 
 const cardList = new Section(
 	{
-		items: [],
 		renderer: (element) => {
 			const card = createCard(element._id, element.name, element.link, element.likes, element.owner._id);
 			cardList.addItem(card);
