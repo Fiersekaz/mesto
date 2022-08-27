@@ -14,20 +14,26 @@ class UserInfo {
 	}
 
 	setUserId(id) {
-		this._id = id;
+		if (id) {
+			this._id = id;
+		}
 	}
 
 	getUserId() {
 		return this._id;
 	}
 
-	setUserInfo(obj) {
-		this._name.textContent = obj.name;
-		this._about.textContent = obj.about;
+	setUserInfo(userData) {
+		if (userData.name) {
+			this._name.textContent = userData.name;
+			this._about.textContent = userData.about;
+		}
 	}
 
 	setUserAvatar(data) {
-		this._avatar.src = data;
+		if (data) {
+			this._avatar.src = data;
+		}
 	}
 }
 export default UserInfo;

@@ -5,10 +5,10 @@ class Section {
 		this._container = container;
 	}
 
-	render() {
+	renderItems() {
 		this._items.forEach((element) => {
 			const item = this._renderer(element);
-			this._container.append(item);
+			this._container.prepend(item);
 		});
 	}
 

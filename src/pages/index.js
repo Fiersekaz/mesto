@@ -1,4 +1,4 @@
-import { api } from "../components/Api.js";
+import Api from "../components/Api.js";
 import "../pages/index.css";
 import { Card } from "../components/Card.js";
 import {
@@ -23,12 +23,17 @@ import {
 	popupDeleteAgree,
 } from "../utils/constans.js";
 
-import { FormValidator } from "../components/FormValidator.js";
+import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithConfirm from "../components/PopupWithConfirm.js";
 import UserInfo from "../components/Userinfo.js";
+
+const api = new Api({
+	baseUrl: "https://mesto.nomoreparties.co/v1/cohort-48",
+	token: "a1b090fc-7b1d-4f72-896c-b01ada5ed19a",
+});
 
 Promise.all([api.getUserInfo(), api.getInitialCard()])
 	.then(([userInfo, cards]) => {
@@ -61,13 +66,12 @@ const cardList = new Section(
 	},
 	elements
 );
-cardList.render();
 
 const popupAvatar = new PopupWithForm(popupEditAvatar, handleFormSubmitAvatar);
 const popupAddCard = new PopupWithForm(popupCardWindow, handleCreateCard);
 const popupEditProfile = new PopupWithForm(popupProfileWindow, handleEditProfile);
 const popupImageValue = new PopupWithImage(popupImageWindow);
-const popupCardRemove = new PopupWithConfirm(popupDeleteAgree, cardRemove);
+const popupCardRemove = new PopupWithConfirm(popupDeleteAgree, removeCard);
 const infoProfile = new UserInfo({ name: profileName, about: profileAbout, avatar: profileAvatar });
 
 function createCard(id, name, link, likes, ownerId) {
@@ -75,7 +79,7 @@ function createCard(id, name, link, likes, ownerId) {
 		{ id, name, link, likes },
 		templateCard,
 		handleCardClick,
-		hadleCardRemove,
+		handleCardRemove,
 		ownerId,
 		infoProfile.getUserId(),
 		handleCardLike
@@ -99,15 +103,16 @@ function handleFormSubmitAvatar(data) {
 		});
 }
 
-function hadleCardRemove(card) {
+function handleCardRemove(card) {
 	popupCardRemove.open(card);
 }
 
-function cardRemove(card) {
+function removeCard(card) {
 	api
 		.removeCard(card.getId())
 		.then(() => {
 			card.delete();
+			popupCardRemove.close();
 		})
 		.catch((error) => {
 			console.log(`ошибка ${error}`);
@@ -176,9 +181,9 @@ function handleCardClick(event) {
 
 profileEdit.addEventListener("click", () => {
 	popupEditProfile.open();
-	const obj = infoProfile.getUserInfo();
-	profileNameInput.value = obj.name;
-	profileAboutInput.value = obj.about;
+	const userData = infoProfile.getUserInfo();
+	profileNameInput.value = userData.name;
+	profileAboutInput.value = userData.about;
 	profileValidator.resetValidation();
 });
 cardAddButton.addEventListener("click", () => {
@@ -187,6 +192,7 @@ cardAddButton.addEventListener("click", () => {
 });
 
 popupAvatarButton.addEventListener("click", () => {
+	avatarValidation.resetValidation();
 	popupAvatar.open();
 });
 

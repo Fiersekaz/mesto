@@ -1,3 +1,5 @@
+import { defaults } from "autoprefixer";
+
 class Api {
 	constructor({ baseUrl, token }) {
 		this._baseUrl = baseUrl;
@@ -98,7 +100,4 @@ class Api {
 	}
 }
 
-export const api = new Api({
-	baseUrl: "https://mesto.nomoreparties.co/v1/cohort-48",
-	token: "a1b090fc-7b1d-4f72-896c-b01ada5ed19a",
-});
+export default Api;

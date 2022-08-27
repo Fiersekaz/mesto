@@ -19,7 +19,6 @@ class PopupWithConfirm extends Popup {
 		this._form.addEventListener("submit", (event) => {
 			event.preventDefault();
 			this._callback(this._card);
-			this.close();
 		});
 	}
 }
