@@ -5,8 +5,8 @@ class Section {
 		this._container = container;
 	}
 
-	renderItems() {
-		this._items.forEach((element) => {
+	renderItems(data) {
+		data.forEach((element) => {
 			const item = this._renderer(element);
 			this._container.prepend(item);
 		});
