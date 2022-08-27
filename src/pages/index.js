@@ -44,10 +44,6 @@ Promise.all([api.getUserInfo(), api.getInitialCard()])
 		infoProfile.setUserId(userInfo._id);
 		infoProfile.setUserAvatar(userInfo.avatar);
 		cardList.renderItems(cards);
-		// cards.forEach((element) => {
-		// 	const card = createCard(element._id, element.name, element.link, element.likes, element.owner._id);
-		// 	cardList.addItem(card);
-		// });
 	})
 	.catch((error) => {
 		console.log(`Возникла ошибка: ${error}`);
