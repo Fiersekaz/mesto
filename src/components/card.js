@@ -1,4 +1,4 @@
-export default class Card {
+class Card {
 	constructor(cardInfo, cardSelector, handleCardClick, handleRemove, ownerId, userId, handleLike) {
 		this._id = cardInfo.id;
 		this._name = cardInfo.name;
@@ -79,3 +79,4 @@ export default class Card {
 		this._element.querySelector(".element__image").addEventListener("click", this._handleCardClick);
 	}
 }
+export default Card;
